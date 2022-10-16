@@ -3,10 +3,20 @@ kind: Workload
 metadata:
   name: spring-petclinic
   labels:
+    tanzu.app.live.view: "true"
+    tanzu.app.live.view.application.actuator.port: "7777"
+    tanzu.app.live.view.application.flavours: spring-boot
+    tanzu.app.live.view.application.name: spring-petclinic
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "true"
     app.kubernetes.io/part-of: spring-petclinic
 spec:
+  env:
+  - name: JAVA_TOOL_OPTIONS
+    value: >-
+      -Dmanagement.server.port=7777
+      -Dmanagement.endpoints.web.exposure.include=health,mappings,info
+      -Dmanagement.endpoint.health.show-details=always
   source:
     git:
       url: https://github.com/bagreda-vmw/spring-petclinic.git
