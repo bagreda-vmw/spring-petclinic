@@ -1,4 +1,4 @@
- site_name: 'Spring Pet Clinic'
+ site_name: 'spring-petclinic'
 
 nav:
   - Home: index.md
