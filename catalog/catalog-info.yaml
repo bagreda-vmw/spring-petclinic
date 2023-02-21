@@ -14,5 +14,5 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: bagreda
+  owner: team-se-anz
 
